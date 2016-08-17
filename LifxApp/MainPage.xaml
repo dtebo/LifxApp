@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="LifxApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LifxApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="myList">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsStackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:LightData">
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind label}"/>
+                            <Slider Value="{x:Bind color.R}"/>
+                            <Slider Value="{x:Bind color.G}"/>
+                            <Slider Value="{x:Bind color.B}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="button" Content="Send" HorizontalAlignment="Left" Margin="410,356,0,0" VerticalAlignment="Top" Click="button_Click" Width="144"/>
+        <Slider x:Name="R" HorizontalAlignment="Left" Minimum="0" Maximum="255" StepFrequency="1" VerticalAlignment="Top" Width="100" Margin="72,144,0,0" ValueChanged="R_ValueChanged"/>
+        <Slider x:Name="G" HorizontalAlignment="Left" Minimum="0" Maximum="255" StepFrequency="1" VerticalAlignment="Top" Width="100" Margin="306,144,0,0" ValueChanged="G_ValueChanged"/>
+        <Slider x:Name="B" HorizontalAlignment="Left" Minimum="0" Maximum="255" StepFrequency="1" VerticalAlignment="Top" Width="100" Margin="498,144,0,0" ValueChanged="B_ValueChanged"/>
+    </Grid>
+</Page>
