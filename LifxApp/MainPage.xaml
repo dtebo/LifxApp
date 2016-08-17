@@ -22,6 +22,7 @@
                             <Slider Value="{x:Bind color.R}"/>
                             <Slider Value="{x:Bind color.G}"/>
                             <Slider Value="{x:Bind color.B}"/>
+                            <!--TODO: Dynamically generate and name sliders-->
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
